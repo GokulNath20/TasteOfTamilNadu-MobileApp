@@ -1,47 +1,86 @@
-# 📑 Technical & Architectural Notes — Taste of Tamil Nadu Mobile App
+# 📑 Technical Notes — Taste of Tamil Nadu Mobile App
 
-## 1. Overview & Objectives
-
-The primary engineering goal of the **Taste of Tamil Nadu** mobile application was to deliver a responsive, visually engaging, and reliable mobile experience for restaurant customers across both iOS and Android platforms with a single unified codebase.
+This file holds the developer details that were moved out of the main README: versions, setup steps, and how the app is built.
 
 ---
 
-## 2. Platform Compatibility & Matrix
+## 1. Overview
 
-| Component | Target Version | Release / Documentation Reference |
+The app is a single React Native codebase that runs on Android and iOS. The source lives in the `taste-of-tamilnadu` project folder.
+
+---
+
+## 2. Versions
+
+| Component | Version | Notes |
 |:---|:---|:---|
-| **React Native** | `0.81.0` | [React Native Releases](https://reactnative.directory/) |
-| **React** | `19.1.0` | [React 19 Documentation](https://react.dev/) |
-| **Android Compile / Target SDK** | `35` (Android 15) | [Android API Levels](https://apilevels.com/) |
-| **Android Min SDK** | `23` (Android 6.0) | Supports >99% active Android devices |
-| **Gradle** | `8.13` | [Gradle Compatibility Guide](https://docs.gradle.org/8.13/userguide/compatibility.html) |
-| **Android Gradle Plugin (AGP)**| `8.12.0` | [AGP Release Notes](https://developer.android.com/build/releases/gradle-plugin) |
-| **Java JDK** | `17` (LTS) | Safest LTS build for Gradle 8.x |
-| **iOS Deployment Target** | `iOS 15.1+` | Minimum standard for React Native 0.81 |
-| **Xcode** | `16.1+` | [Apple Developer Xcode Support](https://developer.apple.com/support/xcode/) |
-| **CocoaPods** | `1.16.2` | [CocoaPods Gem Releases](https://rubygems.org/gems/cocoapods/versions/1.16.2) |
-| **Ruby** | `3.3.9` | Required for macOS CocoaPods runtime |
+| **React Native** | `0.80.2` | `0.81` was skipped because of JSI linking issues with Reanimated and Worklets |
+| **React** | `19.1.0` | |
+| **TypeScript** | `5.8` | |
+| **Android Compile / Target SDK** | `35` (Android 15) | |
+| **Android Min SDK** | `23` (Android 6.0) | |
+| **Gradle** | `8.13` | |
+| **Android Gradle Plugin (AGP)** | `8.12.0` | |
+| **Java JDK** | `17` (LTS) | |
+| **iOS Deployment Target** | `15.1+` | |
+| **Xcode** | `16.1+` | |
+| **CocoaPods** | `1.16.2` | |
+| **Ruby** | `3.3.9` | Used by CocoaPods on macOS |
+| **Node.js** | `24.x` (`>= 18` supported) | |
+| **Yarn** | `1.22.17` | |
 
 ---
 
-## 3. Key Architecture & Engineering Decisions
+## 3. Main Libraries
 
-### 📱 UI & Screen Adaptation
-* **Edge-to-Edge Navigation:** Utilizing `react-native-safe-area-context` for dynamic handling of camera notches, iOS Dynamic Island, and Android gesture navigation bars.
-* **Theme Switching:** Adaptive color palette supporting system-level Dark and Light mode presets.
-
-### ⚡ Performance & Build Optimizations
-* **Android ProGuard & R8:** Pre-configured ProGuard rules for code shrinking and obfuscation on release builds.
-* **Hermes Engine:** JavaScript engine enabled for optimized startup time, lower memory footprint, and smaller APK/IPA sizes.
-* **Modern Kotlin Integration:** Android native layer structured with Kotlin (`MainActivity.kt`, `MainApplication.kt`) for better native bridge support.
-* **Swift Native Entry on iOS:** `AppDelegate.swift` configured with Xcode 16 compatibility.
+* **Navigation:** `@react-navigation/native`, native stack, and bottom tabs
+* **Layout:** `react-native-safe-area-context` for notches and gesture bars
+* **Animation and carousels:** `react-native-reanimated`, `react-native-reanimated-carousel`, `react-native-basic-carousel`
+* **Firebase:** `@react-native-firebase/app` and `storage` are installed, but the home screen no longer loads from Firebase. Promotions and menu photos are bundled with the app.
+* **Splash screen:** `react-native-splash-view`
+* **Testing and quality:** Jest, ESLint, Prettier
 
 ---
 
-## 4. Environment Version Managers Reference
+## 4. Build Notes
 
-Recommended CLI tooling for reproducible development environments:
-* **Node.js:** `nvm` (Node Version Manager)
-* **Yarn:** `yvm` (Yarn Version Manager)
-* **Ruby:** `rvm` / `rbenv` (Ruby Version Manager)
-* **Java:** `sdkman` (Software Development Kit Manager)
+* **Android:** Release builds have code shrinking (ProGuard/R8) configured in Gradle.
+* **Hermes:** Enabled as the JavaScript engine on Android.
+* **Native layers:** Android uses Kotlin (`MainActivity.kt`, `MainApplication.kt`). iOS uses `AppDelegate.swift`.
+
+---
+
+## 5. Running the App for Development
+
+From the `taste-of-tamilnadu` folder:
+
+```bash
+yarn install
+yarn start --port 8082          # start Metro (the JavaScript dev server)
+npx react-native run-android --port 8082   # build and install on a running emulator or device
+```
+
+* Use a port other than the default `8081` if another project is already using it. The app must connect to the same port its Metro server runs on.
+* Start the emulator before running the Android command.
+* For iOS, run `cd ios && pod install`, then `yarn ios`.
+
+**Release build (no dev server needed):** run `./gradlew :app:assembleRelease` from the `android` folder. The JavaScript is bundled into the APK.
+
+---
+
+## 6. Known Issues
+
+* Menu items are sample data in `src/data/menuCategories.ts`. Photos are in `src/assets/images/Menu/`, with authors and licenses in `CREDITS.md` in the same folder.
+* Dark mode is not implemented. The app uses a fixed dark theme.
+* Auth is a placeholder in `src/context/AuthContext.tsx`. Sign up and login use a phone number, but no SMS is sent and the verification code is not checked (dummy bypass). The session is kept in memory only. Replace it with a real phone-auth backend (for example Firebase Phone Auth) before release.
+* The birthdate field is typed as DD/MM/YYYY. A date picker is not added yet.
+* Feedback submission in `src/screens/Main/AboutUsScreen.tsx` is simulated and not stored anywhere yet.
+
+---
+
+## 7. Environment Managers (Optional)
+
+* **Node.js:** `nvm`
+* **Yarn:** `yvm`
+* **Ruby:** `rvm` or `rbenv`
+* **Java:** `sdkman`

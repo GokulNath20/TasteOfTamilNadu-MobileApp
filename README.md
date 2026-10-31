@@ -1,102 +1,70 @@
-# 🍛 Taste of Tamil Nadu — Restaurant Mobile App
+# 🍛 Taste of Tamil Nadu — Mobile App
 
-[![React Native](https://img.shields.io/badge/React_Native-0.81.0-61DAFB?logo=react&logoColor=black)](https://reactnative.dev/)
-[![React](https://img.shields.io/badge/React-19.1.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Android](https://img.shields.io/badge/Android-SDK_35-3DDC84?logo=android&logoColor=white)](https://developer.android.com/)
-[![iOS](https://img.shields.io/badge/iOS-Xcode_16.1+-000000?logo=apple&logoColor=white)](https://developer.apple.com/)
-[![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-orange)]()
-
-> A dedicated cross-platform mobile application developed for an authentic South Indian restaurant brand (*Taste of Tamil Nadu*). Built to digitalize the dining experience, showcase regional culinary heritage, streamline customer engagement, and enable interactive menu exploration and reservations.
+A mobile app for *Taste of Tamil Nadu*, an authentic South Indian restaurant. It is built to work on both Android and iPhone from one codebase.
 
 ---
 
-## 📱 App Screenshots
+## 📱 Screenshots
 
-<!-- 
-  Add your screenshots to the /screenshots folder with matching filenames 
-  or update the image paths below. Recommended resolution: 1080x2400 (or standard iPhone/Android screenshot)
--->
+<table>
+  <tr>
+    <td align="center"><img src="screenshots/01_splash_screen.png" width="220" alt="Splash screen"/><br/><b>Splash</b><br/><sub>Restaurant logo shown on launch</sub></td>
+    <td align="center"><img src="screenshots/02_onboarding_welcome.png" width="220" alt="Welcome slide"/><br/><b>Welcome</b><br/><sub>Introduction to the restaurant</sub></td>
+    <td align="center"><img src="screenshots/03_onboarding_cafe.png" width="220" alt="Cafe slide"/><br/><b>A Cafe Beyond Ordinary</b><br/><sub>"Relax, sip, and savor the moment"</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/04_onboarding_coffee_tea.png" width="220" alt="Coffee and tea slide"/><br/><b>Finest Coffee, Purest Tea</b><br/><sub>"Brewed just for you"</sub></td>
+    <td align="center"><img src="screenshots/05_onboarding_meals.png" width="220" alt="Meals slide"/><br/><b>From Meals to Biscuits</b><br/><sub>"Always cooked fresh"</sub></td>
+    <td align="center"><img src="screenshots/06_home_screen.png" width="220" alt="Home screen"/><br/><b>Home</b><br/><sub>Promotions, menu categories and dish photos</sub></td>
+  </tr>
+</table>
 
-| 🏠 Home & Discovery | 📜 Interactive Menu | 🍲 Dish Details & Customization |
-|:---:|:---:|:---:|
-| <img src="screenshots/01_home_screen.png" width="240" alt="Home Screen (Add screenshot: screenshots/01_home_screen.png)"/> | <img src="screenshots/02_menu_catalog.png" width="240" alt="Menu Catalog (Add screenshot: screenshots/02_menu_catalog.png)"/> | <img src="screenshots/03_dish_detail.png" width="240" alt="Dish Detail (Add screenshot: screenshots/03_dish_detail.png)"/> |
-| *Featured specials, chef's recommendations & quick actions* | *Category filtering (Chettinad, Madurai, Veg/Non-Veg)* | *Spice meters, ingredient stories & allergen info* |
-
-| 📅 Table Reservations | 🏷️ Offers & Special Combos | 📍 Location & Contact |
-|:---:|:---:|:---:|
-| <img src="screenshots/04_table_reservation.png" width="240" alt="Table Booking (Add screenshot: screenshots/04_table_reservation.png)"/> | <img src="screenshots/05_promotions.png" width="240" alt="Special Offers (Add screenshot: screenshots/05_promotions.png)"/> | <img src="screenshots/06_location_info.png" width="240" alt="Location & Hours (Add screenshot: screenshots/06_location_info.png)"/> |
-| *Real-time party size, date/time slot selection* | *Daily thali specials, festival combos & discounts* | *Operating hours, interactive map & direct contact* |
-
----
-
-## 🌟 Key Features & Capabilities
-
-### 🍽️ 1. Interactive Digital Menu & Culinary Catalog
-* **Regional Categorization:** Curated breakdown of Tamil Nadu culinary traditions (Chettinad, Madurai Mess specials, Kongu Nadu, Thanjavur vegetarian delicacies, Coastal Tamil seafood).
-* **Dietary & Preference Filters:** Instant toggles for Vegetarian, Non-Vegetarian, Jain/Vegan-friendly, and Halal items.
-* **Dish Customization & Details:** Visual indicators for spice level ratings (Mild, Medium, Fiery Chettinad), allergen warnings, and preparation details.
-
-### 📅 2. Table Booking & Reservation Management
-* Seamless booking flow allowing diners to select date, meal period (Lunch / Dinner), time slot, and seating party size.
-* Special requests and dietary notes section for chefs prior to arrival.
-
-### 🎉 3. Daily Specials, Combos & Festive Menus
-* Dynamic showcase for traditional weekend feasts, festive banana-leaf meals (*Virundhu Saapadu*), and seasonal specialties.
-* Promotional banners highlighting limited-time discounts and family bundle sets.
-
-### 📍 4. Location, Operating Hours & Contact
-* One-tap navigation to restaurant outlets with map integration.
-* Live status display for open/closed dining hours and direct kitchen hotline calling.
-
-### 🎨 5. Modern, High-Performance UI/UX
-* Designed with native safe-area context handling across notch, dynamic island, and edge-to-edge screens.
-* Adaptive Dark & Light mode support matching the system theme.
-* Smooth 60fps scrolling and native gesture animations.
+<table>
+  <tr>
+    <td align="center"><img src="screenshots/07_about_us.png" width="220" alt="About Us screen"/><br/><b>About Us</b><br/><sub>Story, mission, vision and opening hours</sub></td>
+    <td align="center"><img src="screenshots/08_about_feedback.png" width="220" alt="Feedback form"/><br/><b>Feedback</b><br/><sub>Guests share feedback after logging in</sub></td>
+    <td align="center"><img src="screenshots/09_profile.png" width="220" alt="Profile screen"/><br/><b>Profile</b><br/><sub>Log in or sign up to join in</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/10_login.png" width="220" alt="Sign up or login screen"/><br/><b>Sign Up / Login</b><br/><sub>Enter a phone number</sub></td>
+    <td align="center"><img src="screenshots/11_otp.png" width="220" alt="Verification screen"/><br/><b>Verification</b><br/><sub>Enter the 6-digit code</sub></td>
+    <td align="center"><img src="screenshots/12_complete_profile.png" width="220" alt="Complete profile screen"/><br/><b>Complete Profile</b><br/><sub>Username, optional email and birthdate</sub></td>
+  </tr>
+</table>
 
 ---
 
-## 🛠️ Technology Stack & Architecture
+## ✨ What the App Does
 
-| Layer | Technology | Details |
-|:---|:---|:---|
-| **Core Framework** | React Native 0.81.0 | React 19.1.0 engine with modern architecture |
-| **Language** | TypeScript 5.8+ | End-to-end type safety |
-| **Android Toolchain** | Kotlin, Gradle 8.13, AGP 8.12 | Compile & Target SDK 35 (Android 15), Min SDK 23 |
-| **iOS Toolchain** | Swift, CocoaPods 1.16.2 | Xcode 16.1+, iOS 15.1+ compatibility |
-| **Layout & UI** | React Native Safe Area Context | Edge-to-edge notch & navigation bar handling |
-| **Quality & Tooling** | Jest 29, ESLint, Prettier, Metro | Code styling and unit test readiness |
-
----
-
-## 📋 Environment & Build Prerequisites
-
-For reference, the native build environment established for this application:
-
-### Package Managers & Runtime
-* **Node.js:** `>= 18.x` (Tested with Node `24.6.0`)
-* **NPM:** `11.5.1`
-* **Yarn:** `1.22.17` (LTS)
-
-### Android Environment
-* **Java (JDK):** `17` (LTS, verified for Gradle 8.x)
-* **Android SDK:**
-  * Compile SDK: `35` (Android 15)
-  * Target SDK: `35` (Android 15)
-  * Min SDK: `23` (Android 6.0 Marshmallow)
-* **Gradle:** `8.13` | **Android Gradle Plugin (AGP):** `8.12.0`
-
-### iOS Environment
-* **Xcode:** `16.1+` (Required for React Native 0.81)
-* **CocoaPods:** `1.16.2`
-* **Ruby:** `3.3.9` & Bundler `2.7.1`
+* **Welcome walkthrough:** Four intro slides introduce the restaurant. Users can swipe or tap **Next**, then **Get Started** to enter the app.
+* **Home screen:** A friendly *Vanakkam* greeting, a "What's for today?" section showing when it was last updated, and pull-to-refresh to reload.
+* **Promotions banner:** Promotional images are built into the app and appear as a swipeable banner.
+* **Menu categories:** Four categories (Tiffin, Roti Canai, Dosa Treats, Chicken), each with its own dishes and photos. Dishes that are sold out appear faded.
+* **About Us:** The restaurant's story, mission, vision, address (tap to open in Maps), opening hours, and a feedback form.
+* **Profile:** Log in or sign up, or view your details and log out.
+* **Easy navigation:** Three tabs at the bottom: **Home**, **About Us**, and **Profile**.
 
 ---
 
-## 💼 Portfolio Project Context
+## 🚧 Current Status
 
-> **Note on Project Status:**  
-> This mobile application was designed and engineered as a client mobile product for the *Taste of Tamil Nadu* restaurant. Following the subsequent closure of the restaurant's physical business operations, this repository is maintained as a showcase of the mobile system's architectural design, native mobile engineering, and feature portfolio.
+This is an early version of the app, and some parts are still placeholders:
+
+* **Menu:** The categories and dishes are sample content. Dish names and prices will be updated once the restaurant's real menu is confirmed. Photos are from free-license sources (see the credits file in the app project).
+* **Accounts:** Sign up and login use a phone number and a verification code. The code is not checked yet, and no SMS is sent, so any code works. Accounts are not saved between app launches.
+* **Feedback:** Logged-in guests can send feedback from the About Us tab, but feedback is not stored yet. It shows a thank-you message after submitting.
+
+> **Note on project status:** This app was built as a client product for the *Taste of Tamil Nadu* restaurant. After the restaurant's physical business closed, this repository was kept as a showcase of the app's design and mobile engineering work.
+
+---
+
+## 🛠️ Built With
+
+* **React Native** and **TypeScript** for the app
+* **Wikimedia Commons** photos for the menu (free-license, credited)
+* **Android and iOS** native projects
+
+For setup steps, versions, and architecture details, see [TECHNICAL_NOTES.md](TECHNICAL_NOTES.md).
 
 ---
 

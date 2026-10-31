@@ -1,20 +1,20 @@
-# 📸 Screenshots Guide
+# 📸 Screenshots
 
-Place your app screenshot images inside this folder (`screenshots/`) with the following recommended filenames:
+These screenshots were taken from the Android emulator (Pixel 9, Android 15) running the app.
 
-| Filename | Description | Recommended Format |
-|:---|:---|:---|
-| `01_home_screen.png` | Home / Landing screen with banner & featured dishes | PNG / JPEG (1080x2400 or standard mobile resolution) |
-| `02_menu_catalog.png` | Menu catalog / category browsing view | PNG / JPEG |
-| `03_dish_detail.png` | Dish detail page showing description, spice meter & price | PNG / JPEG |
-| `04_table_reservation.png` | Table booking / reservation date & time picker | PNG / JPEG |
-| `05_promotions.png` | Special offers, thali specials & festive combos | PNG / JPEG |
-| `06_location_info.png` | Outlet location, map integration & opening hours | PNG / JPEG |
+| File | Screen |
+|:---|:---|
+| `01_splash_screen.png` | Splash screen with the restaurant logo |
+| `02_onboarding_welcome.png` | Welcome slide |
+| `03_onboarding_cafe.png` | "A Cafe Beyond Ordinary" slide |
+| `04_onboarding_coffee_tea.png` | "Finest coffee, purest tea" slide |
+| `05_onboarding_meals.png` | "From meals to biscuits" slide |
+| `06_home_screen.png` | Home screen with promotions, menu categories and dish photos |
+| `07_about_us.png` | About Us screen with story, mission, vision, address and hours |
+| `08_about_feedback.png` | About Us feedback form (shown after logging in) |
+| `09_profile.png` | Profile screen before logging in |
+| `10_login.png` | Sign up / login screen (phone number) |
+| `11_otp.png` | Verification screen (6-digit code) |
+| `12_complete_profile.png` | Complete profile screen |
 
-Once added, commit and push:
-```bash
-git add screenshots/
-git commit -m "Add app screenshots"
-git push origin main
-```
-The main [README.md](../README.md) is pre-configured to automatically render these images in a formatted grid.
+The main [README.md](../README.md) shows these images in a grid.
