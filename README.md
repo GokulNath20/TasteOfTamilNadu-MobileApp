@@ -58,5 +58,3 @@ The menu items and prices are sample content. The menu photos come from free-lic
 ## Developer
 
 **Gokul Nath** ([@GokulNath20](https://github.com/GokulNath20)), mobile application developer.
-
-For more about how the app was made, see [TECHNICAL_NOTES.md](TECHNICAL_NOTES.md).
